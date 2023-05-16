@@ -17,7 +17,7 @@ resource "azurerm_resource_group" "rg" {
 }
 
 resource "azurerm_storage_account" "storage" {
-    name                     = "test-terraform-dev-sa"
+    name                     = "testterraformdevsa"
     resource_group_name      = azurerm_resource_group.rg.name
     location                 = azurerm_resource_group.rg.location
     account_tier             = "Standard"
@@ -33,24 +33,24 @@ resource "azurerm_storage_container" "container" {
 
 resource "azurerm_storage_blob" "data_import" {
   name                   = "Data Import/placeholder.txt"
-  storage_account_name   = azurerm_storage_account.storage_account.name
+  storage_account_name   = azurerm_storage_account.storage.name
   storage_container_name = azurerm_storage_container.container.name
-  type                   = "text/plain"
+  type                   = "Block"
   source                 = "./placeholder.txt"
 }
 
 resource "azurerm_storage_blob" "data_scratch" {
   name                   = "Data Scratch/placeholder.txt"
-  storage_account_name   = azurerm_storage_account.storage_account.name
+  storage_account_name   = azurerm_storage_account.storage.name
   storage_container_name = azurerm_storage_container.container.name
-  type                   = "text/plain"
+  type                   = "Block"
   source                 = "./placeholder.txt"
 }
 
 resource "azurerm_storage_blob" "data_failed" {
   name                   = "Data Failed/placeholder.txt"
-  storage_account_name   = azurerm_storage_account.storage_account.name
+  storage_account_name   = azurerm_storage_account.storage.name
   storage_container_name = azurerm_storage_container.container.name
-  type                   = "text/plain"
+  type                   = "Block"
   source                 = "./placeholder.txt"
 }
