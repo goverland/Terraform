@@ -6,7 +6,17 @@ This project is meant as a demo.
 
 ---
 
+## Installing Terraform
+
+Follow this tutorial from the main documentation to install Terraform. \
+
+[Terraform Tutorial](https://developer.hashicorp.com/terraform/tutorials/azure-get-started/install-cli)
+
+
+---
+
 ## How To Use
+
 
 1. Login to Azure \
 ``` az login ```
