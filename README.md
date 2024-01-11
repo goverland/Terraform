@@ -40,3 +40,8 @@ Follow this tutorial from the main documentation to install Terraform. \
 ``` terraform destroy```
 ---
 
+## Add new components
+
+Visit Terraform registry to find documentation on how to add more components.
+
+[Terraform Registry](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs)
