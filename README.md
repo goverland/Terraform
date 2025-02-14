@@ -8,7 +8,15 @@ This project is meant as a demo.
 
 ## Prerequisites
 
+### Install Powershell
+
+The how to guide uses Powershell Core commands. So to be able to follow it you need Powershell installed. 
+
+[Powershell Installation Guide](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.5)
+
 ### Install Azure CLI
+
+The How To guide uses Azure CLI (az) to login to Azure. 
 
 [Install Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
 
