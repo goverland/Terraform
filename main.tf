@@ -1,33 +1,32 @@
 terraform {
-    required_providers {
-      azurerm = {
-        source  = "hashicorp/azurerm"
-        version = ">= 2.52.0"
-      }
-    } 
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = ">= 4.19.0"
+    }
+  }
 }
 
 provider "azurerm" {
-    features {}
+  features {}
 }
 
 resource "azurerm_resource_group" "rg" {
-    name     = "test-terraform-dev-rg"
-    location = "norwayeast"
+  name     = "test-terraform-dev-rg"
+  location = "norwayeast"
 }
 
 resource "azurerm_storage_account" "storage" {
-    name                     = "testterraformdevsa"
-    resource_group_name      = azurerm_resource_group.rg.name
-    location                 = azurerm_resource_group.rg.location
-    account_tier             = "Standard"
-    account_replication_type = "LRS"
-    enable_https_traffic_only = true
+  name                     = "testterraformdevsa"
+  resource_group_name      = azurerm_resource_group.rg.name
+  location                 = azurerm_resource_group.rg.location
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
 }
 
 resource "azurerm_storage_container" "container" {
   name                  = "test-kommune"
-  storage_account_name  = azurerm_storage_account.storage.name
+  storage_account_id    = azurerm_storage_account.storage.id
   container_access_type = "private"
 }
 

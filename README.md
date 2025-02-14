@@ -6,12 +6,24 @@ This project is meant as a demo.
 
 ---
 
-## Installing Terraform
+## Prerequisites
+
+### Install Azure CLI
+
+[Install Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
+
+### Install Terraform
 
 Follow this tutorial from the main documentation to install Terraform. \
 
 [Terraform Tutorial](https://developer.hashicorp.com/terraform/tutorials/azure-get-started/install-cli)
 
+### Azure Tenant
+
+You need a Azure tenant where you are able to deploy infrastructure.
+If you have Visual Studio Professional, you can use your included subscription.
+
+[Activate Visual Studio Subscription here](https://azure.microsoft.com/en-us/pricing/member-offers/credit-for-visual-studio-subscribers/)
 
 ---
 
@@ -27,16 +39,19 @@ Follow this tutorial from the main documentation to install Terraform. \
 3. Set correct subscription. \
 ``` az account set -s {SubscriptionID}```
 
-4. Initialize Terraform \
+4. Set subscriptionId as an environment variable \
+``` $env:ARM_SUBSCRIPTION_ID=$(az account show --query id -o tsv) ```
+
+5. Initialize Terraform \
 ``` terraform init```
 
-5. Run plan to get an overview of what is being changed by Terraform \
+6. Run plan to get an overview of what is being changed by Terraform \
 ``` terraform plan```
 
-6. Apply the changes \
+7. Apply the changes \
 ``` terraform apply```
 
-7. Delete the resources. \
+8. Delete the resources. \
 ``` terraform destroy```
 ---
 
